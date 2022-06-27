@@ -7,8 +7,7 @@ namespace Domain\Blogging\Models;
 
 use Database\Factories\PostFactory;
 use Domain\Blogging\Models\Builders\PostBuilder;
-use Domain\Shared\Models\Concerns\HasSlug;
-use Domain\Shared\Models\Concerns\HasUuid;
+use Domain\Blogging\Models\Concerns\IsPost;
 use Domain\Shared\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -17,8 +16,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class Post extends Model {
-    use HasUuid;
-    use HasSlug;
+    use IsPost;
     use HasFactory;
     use SoftDeletes;
 

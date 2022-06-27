@@ -14,6 +14,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Laravel\Jetstream\HasProfilePhoto;
 
 class User extends Authenticatable {
     use HasUuid;
@@ -21,6 +22,7 @@ class User extends Authenticatable {
     use HasFactory;
     use Notifiable;
     use SoftDeletes;
+    use HasProfilePhoto;
 
     protected $fillable = [
         'uuid',
@@ -28,7 +30,8 @@ class User extends Authenticatable {
         'last_name',
         "email",
         'password',
-        'theme'
+        'theme',
+        'profile_photo_path'
     ];
    
     protected $hidden = [
