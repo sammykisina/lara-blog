@@ -19,7 +19,7 @@ class IndexController extends Controller {
             subject: Post::class
         )->allowedIncludes(
             includes: ['user'] // ?include=x,y,z whr x,y,z r rlnships
-        )->paginate(3);
+        )->paginate();
         
         return response()->json(
             data: PostResource::collection(
