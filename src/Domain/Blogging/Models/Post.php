@@ -7,6 +7,7 @@ namespace Domain\Blogging\Models;
 
 use Database\Factories\PostFactory;
 use Domain\Blogging\Models\Builders\PostBuilder;
+use Domain\Blogging\Models\Collections\PostCollection;
 use Domain\Blogging\Models\Concerns\IsPost;
 use Domain\Shared\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -43,6 +44,12 @@ class Post extends Model {
 
     public function newEloquentBuilder($query): PostBuilder {
        return new PostBuilder(query: $query);
+    }
+
+    public function newCollection(array $models = []): PostCollection {
+        return new PostCollection(
+            items: $models
+        );
     }
 
     public static function newFactory(): Factory {

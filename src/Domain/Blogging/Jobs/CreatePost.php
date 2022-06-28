@@ -26,10 +26,10 @@ class CreatePost implements ShouldQueue {
 
     public function handle(): void {
        PostAggregate::retrieve(
-        uuid:Str::uuid()->toString()
-       )->createPost(
+            uuid: Str::uuid()->toString()
+        )->createPost(
             object: $this->object,
-            userID: 1
-       )->persist();
+            userID: 1,
+        )->persist();
     }
 }
