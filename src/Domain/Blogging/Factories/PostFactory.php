@@ -15,6 +15,7 @@ class PostFactory {
       title:$attributes['title'],
       body: $attributes['body'],
       description: $attributes['description'],
+      published: $attributes['published'] ?? false
     );
   }
 }

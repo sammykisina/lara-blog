@@ -21,7 +21,6 @@ class PostProjector  extends Projector {
      */
     CreatePost::handle(
       object: $event->object,
-      uuid: $event->aggregateRootUuid()
     );
   }  
   
